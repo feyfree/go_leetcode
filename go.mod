@@ -1,4 +1,3 @@
-module go_leetcode
-
+module github.com/feyfree/go_leetcode
 
 go 1.15
