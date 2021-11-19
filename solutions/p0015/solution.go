@@ -4,25 +4,34 @@ import "sort"
 
 // 数组内部可能重复
 func threeSum(nums []int) [][]int {
-	if len(nums) < 3 {
+	n := len(nums)
+	if n < 3 {
 		return [][]int{}
 	}
 	sort.Ints(nums)
-	// 二分搜索
-	for i := 0; i < len(nums); i++ {
-		va := nums[i]
-		for j := i + 1; j < len(nums); j++ {
-			if (j-1 > i) && nums[j] == nums[j-1] {
+	// 双指针
+	var result [][]int
+	for i := 0; i < n; i++ {
+		if i > 0 && nums[i] == nums[i-1] {
+			continue
+		}
+		start := i + 1
+		end := n - 1
+		for start < end {
+			sum := nums[start] + nums[end] + nums[i]
+			if start-1 > i && nums[start] == nums[start-1] {
+				start++
 				continue
 			}
-			vb := nums[j]
-			start := j
-			end := len(nums) - 1
-			for start < end {
-				mid := start + (end - start) / 2
-				sum = va + vb + nums[]
+			if sum == 0 {
+				result = append(result, []int{nums[i], nums[start], nums[end]})
+				start++
+			} else if sum > 0 {
+				end--
+			} else {
+				start++
 			}
 		}
 	}
-
+	return result
 }
