@@ -13,6 +13,7 @@ func removeNthFromEnd(head *ListNode, n int) *ListNode {
 		n--
 	}
 	var slow = dummy
+	// 为什么使用fast.Next    slow -> fast fast最后一个绝对不能是nil
 	for fast.Next != nil {
 		fast = fast.Next
 		slow = slow.Next
