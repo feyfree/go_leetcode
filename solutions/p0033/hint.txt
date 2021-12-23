@@ -1,0 +1,6 @@
+二分搜索的本质实际上是不断缩小搜索范围, 找到需要的数
+这道题start, end 如何移动需要思考
+不是一味的根据 data[mid] 和 target 比较
+data[mid] < data[end] 说明在同一个递增序列
+data[mid] > data[end] 说明不在一个递增序列
+data[mid] == data[end] end--

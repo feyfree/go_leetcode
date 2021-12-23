@@ -1,0 +1,4 @@
+1. 从右往左, 找到第一个数字违反了升序的, 作为partition_num (从极值的角度思考, 整体反转是全部是从右往左是升序的)
+2. 从右往左, 找到第一个数字大于partition_num作为change_num
+3. 交换partition_num 和 change_num
+4. 之前partition_num所在索引之后进行翻转
