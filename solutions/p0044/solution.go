@@ -9,6 +9,7 @@ func isMatch(s string, p string) bool {
 	for i := range dp {
 		dp[i] = make([]bool, l2+1)
 	}
+	dp[0][0] = true
 	// 初始化
 	for i := 1; i <= l2; i++ {
 		if p[i-1] == '*' {
