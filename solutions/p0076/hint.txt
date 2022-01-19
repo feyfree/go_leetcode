@@ -1,0 +1,17 @@
+解题思路
+字符串     s
+patter     t
+滑动窗口
+1. counter 作为字符计数数组, total 初始化为 t.length
+2. start 初始化为 0
+   end 从 s 0 开始向后面扫
+        如果所在字符在数组中出现
+            total减少
+        counter[s[end]] 减去 1
+
+        如果total = 0, 表示 (start, end) 是一个可选对  ( 这地方比较一下区间范围 i - j + 1 和 min 对比 )
+        下面是如何  更新这个start
+
+        因为total 正好是 0， 所以end 不浪费， start 看看是否是浪费的
+        start 如果是 通过 自增操作 变成大于 0 的话， 说明start的位置的字符 之前在字符计数数组中是 存在的 (存在于t) total 需要加加 可以破坏for条件
+        start 往后移动
