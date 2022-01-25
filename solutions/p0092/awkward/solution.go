@@ -1,4 +1,4 @@
-package p0092
+package awkward
 
 import (
 	"github.com/feyfree/go_leetcode/structures"
@@ -22,6 +22,7 @@ func reverseBetween(head *ListNode, left int, right int) *ListNode {
 	current = front.Next
 	tail = current
 	for i := left; i <= right; i++ {
+		// 逻辑A
 		next := current.Next
 		current.Next = prev
 		prev = current

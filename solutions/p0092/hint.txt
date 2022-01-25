@@ -1,0 +1,2 @@
+common 里面的solution 比较容易理解
+awkward 比较难以理解
