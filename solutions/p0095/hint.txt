@@ -1,0 +1,16 @@
+递归思路Recursion
+
+
+区间[1, n] 抽象子问题 [left, right]
+
+
+for i in [left, right] {
+    for l in [left, i - 1] {
+        for right in [i + 1, right] {
+            Node a{val = i}
+            a.left = l
+            a.right = r
+            container.add(a)
+        }
+    }
+}
