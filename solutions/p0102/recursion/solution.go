@@ -1,4 +1,4 @@
-package p0102
+package recursion
 
 import "github.com/feyfree/go_leetcode/structures"
 
