@@ -16,10 +16,12 @@ func buildTree0(preorder []int, iStart int, pStart int, pEnd int, position *map[
 	if pStart > pEnd {
 		return nil
 	}
-	iMid := (*position)[preorder[pStart]]
-	pMid := pStart + iMid - iStart
+
 	root := &TreeNode{Val: preorder[pStart]}
+	// 相当于  root 在 inorder 里面的顺序
+	rootIndex := (*position)[preorder[pStart]]
+	pMid := pStart + rootIndex - iStart
 	root.Left = buildTree0(preorder, iStart, pStart+1, pMid, position)
-	root.Right = buildTree0(preorder, iMid+1, pMid+1, pEnd, position)
+	root.Right = buildTree0(preorder, rootIndex+1, pMid+1, pEnd, position)
 	return root
 }
