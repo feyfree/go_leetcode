@@ -1,0 +1,9 @@
+首先要知道一个结论，前序/后序+中序序列可以唯一确定一棵二叉树
+
+题目是Val 序列, 不是Node 序列
+但是Val 不会重复
+
+1. preOrder 和 inOrder 里面相同的Val 认为是同一个节点
+2. preorder第一个元素为root，在inorder里面找到root，
+   在它之前的为左子树（长l1）之后为右子树（长l2）。
+   preorder[1]到preorder[l1]为左子树,之后为右子树，分别递归
