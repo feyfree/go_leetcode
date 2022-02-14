@@ -1,0 +1,9 @@
+注意和 前序 + 中序的区别
+1. 首先都需要构造一个map 去映射inorder 中的Node 顺序
+2. 从后序遍历中构建数， left 和 right 的构造区间也需要注意一下
+    A. 后序遍历从后往前,  end 是 root 节点, 记录为 R
+    B. 找到 R 节点在inorder 中的位置  记录为 index
+    C. 确定分割点 M,  pStart + index - iStart - 1 (相当于以 pStart 往后偏移 inorder 中记录的 数量,  注意是区间, 所以是绝对值)
+    D. left 修复 三元组 {iStart, pStart, M}
+       right 修复 三元组 {index + 1, M + 1, pEnd - 1}
+    E. 返回root
