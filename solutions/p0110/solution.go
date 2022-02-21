@@ -16,7 +16,7 @@ func isBalanced(root *TreeNode) bool {
 }
 
 func height(root *TreeNode) int {
-	if root == nil {
+	if root == nil || !balanced {
 		return 0
 	}
 	lh := height(root.Left)
